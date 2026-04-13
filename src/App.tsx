@@ -1388,9 +1388,9 @@ export default function RemoteJobsLandingpageUltraModern() {
           <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-white/70 leading-relaxed">
             <div className="font-semibold text-white mb-2">Was passiert als Nächstes?</div>
             <ol className="space-y-1.5 list-decimal list-inside">
-              <li>Wir melden uns innerhalb von 24 Stunden bei dir</li>
-              <li>Gemeinsam finden wir einen passenden Termin</li>
-              <li>Im 15-20 minütigen Gespräch klären wir deinen optimalen Einstieg</li>
+              <li>Du siehst ein kurzes Video über unser Modell und deine Verdienstmöglichkeiten</li>
+              <li>Unser KI-Assistent Vito stellt dir ein paar kurze Fragen</li>
+              <li>Danach kannst du direkt dein persönliches Erstgespräch buchen</li>
             </ol>
           </div>
 
@@ -1400,7 +1400,7 @@ export default function RemoteJobsLandingpageUltraModern() {
             trackingLocation="modal_form"
             className="mt-2 w-full px-5 py-3 rounded-2xl text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {submitting ? "Wird gesendet..." : "Jetzt Erstgespräch anfragen"}
+            {submitting ? "Wird gesendet..." : "Weiter zum Video"}
           </GetStartedButton>
 
           <div className="flex items-start gap-2 text-xs text-white/50">
