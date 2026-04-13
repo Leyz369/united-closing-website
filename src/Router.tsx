@@ -4,6 +4,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Impressum from "./pages/Impressum";
 import ImageGenerator from "./pages/ImageGenerator";
 import Admin from "./pages/Admin";
+import VideoPage from "./pages/VideoPage";
+import Quiz from "./pages/Quiz";
 
 export default function Router() {
   return (
@@ -14,6 +16,8 @@ export default function Router() {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/generate-image" element={<ImageGenerator />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/video" element={<VideoPage />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </BrowserRouter>
   );

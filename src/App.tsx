@@ -596,14 +596,21 @@ export default function RemoteJobsLandingpageUltraModern() {
 
       trackFormSubmitSuccess("erstgespraech_anfrage");
 
-      setModalOpen(false);
-      setToast({
-        open: true,
-        title: "Perfekt! Deine Anfrage ist bei uns angekommen.",
-        desc: "Wir melden uns innerhalb der nächsten 24 Stunden bei dir, um einen passenden Termin für dein kostenloses Erstgespräch zu finden. Schau auch gerne in deinem Spam-Ordner nach!",
-      });
+      // GA4 conversion event
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "generate_lead", { event_category: "form", event_label: "contact_form" });
+      }
 
+      // Facebook Pixel
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
+
+      // Store lead name and redirect to video page
+      localStorage.setItem("uc_lead_name", form.name || "");
+      setModalOpen(false);
       setForm({ name: "", email: "", phone: "" });
+      window.location.href = "/video";
     } catch (error) {
       console.error("Error submitting form:", error);
       setToast({
@@ -737,6 +744,7 @@ export default function RemoteJobsLandingpageUltraModern() {
           logo="/United_closing.webp"
           ctaButtons={[
             { text: "Jetzt kostenloses Erstgespräch sichern", primary: true, onClick: openCTA, trackingLocation: "hero" },
+            { text: "Finde heraus ob es passt \u2192", href: "/quiz" },
           ]}
           microDetails={[
             "Ortsunabhängig arbeiten – von überall",
