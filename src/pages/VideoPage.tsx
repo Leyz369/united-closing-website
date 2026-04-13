@@ -90,7 +90,7 @@ export default function VideoPage() {
         {/* Hero Section */}
         <div className="mb-10 text-center">
           <div className="mb-4 inline-block rounded-full border border-[#7AA2FF]/20 bg-[#7AA2FF]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#7AA2FF] backdrop-blur-sm">
-            Dein naechster Schritt
+            Dein nächster Schritt
           </div>
           <h1 className="text-balance text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
             {leadName ? (
@@ -104,7 +104,7 @@ export default function VideoPage() {
             was wir machen & was du verdienen kannst.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-base text-white/60 sm:text-lg">
-            In diesem Video erfaehrst du, wie unser Remote-Modell funktioniert — und warum hunderte Menschen bereits erfolgreich damit arbeiten.
+            In diesem Video erfährst du, wie unser Remote-Modell funktioniert — und warum hunderte Menschen bereits erfolgreich damit arbeiten.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export default function VideoPage() {
         {/* Key Points */}
         <div className="mx-auto mb-12 grid max-w-3xl gap-4 sm:grid-cols-3">
           {[
-            { icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm7.9 9H16.7a15.6 15.6 0 00-1.2-6 8.03 8.03 0 014.4 6zM12 4c1 1.4 1.8 3.6 2.2 7H9.8C10.2 7.6 11 5.4 12 4z", title: "Ortsunabhaengig", desc: "Arbeite von ueberall — Homeoffice, Cafe oder Bali" },
+            { icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm7.9 9H16.7a15.6 15.6 0 00-1.2-6 8.03 8.03 0 014.4 6zM12 4c1 1.4 1.8 3.6 2.2 7H9.8C10.2 7.6 11 5.4 12 4z", title: "Ortsunabhängig", desc: "Arbeite von überall — Homeoffice, Café oder Bali" },
             { icon: "M3 7h18v10H3V7zm2 2v6h14V9H5zm7 1a2 2 0 110 4 2 2 0 010-4z", title: "2.000–8.000\u20AC+/Monat", desc: "Performance-basiert — je nach Einsatz und Modell" },
             { icon: "M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 11h4v-2h-3V6h-2z", title: "Flexible Zeiten", desc: "Vollzeit oder nebenberuflich — du entscheidest" },
           ].map((item, i) => (
@@ -150,7 +150,7 @@ export default function VideoPage() {
             Sprich kurz mit <span className="text-[#7AA2FF]">Vito</span>
           </h2>
           <p className="mb-6 text-sm text-white/60">
-            Vito stellt dir 2–3 kurze Fragen, damit wir das Erstgespraech perfekt fuer dich vorbereiten koennen. Dauert nur 2 Minuten.
+            Vito stellt dir 2–3 kurze Fragen, damit wir das Erstgespräch perfekt für dich vorbereiten können. Dauert nur 2 Minuten.
           </p>
           <div className="flex justify-center">
             {/* @ts-expect-error ElevenLabs custom element */}
@@ -163,7 +163,7 @@ export default function VideoPage() {
           {/* Countdown */}
           <div className="mb-6 rounded-2xl border border-[#A78BFA]/15 bg-[#A78BFA]/5 p-5 text-center backdrop-blur-xl">
             <p className="mb-2 text-sm text-white/60">
-              Dein Platz ist fuer <span className="font-semibold text-white">24 Stunden</span> reserviert
+              Dein Platz ist für <span className="font-semibold text-white">24 Stunden</span> reserviert
             </p>
             <div className="flex items-center justify-center gap-3 text-3xl font-bold tabular-nums">
               <div className="rounded-xl bg-white/5 px-4 py-2 text-[#7AA2FF]">{pad(hoursLeft.h)}</div>
@@ -181,7 +181,7 @@ export default function VideoPage() {
             rel="noopener noreferrer"
             className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#7AA2FF] to-[#A78BFA] px-8 py-5 text-lg font-bold text-white shadow-xl shadow-[#7AA2FF]/20 transition-all duration-300 hover:shadow-[#7AA2FF]/40 hover:brightness-110 sm:text-xl"
           >
-            Jetzt Erstgespraech buchen
+            Jetzt Erstgespräch buchen
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 transition-transform group-hover:translate-x-1">
               <path d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
             </svg>
@@ -215,7 +215,7 @@ export default function VideoPage() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 rotate-180">
               <path d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
             </svg>
-            Zurueck zur Startseite
+            Zurück zur Startseite
           </button>
         </div>
       </main>

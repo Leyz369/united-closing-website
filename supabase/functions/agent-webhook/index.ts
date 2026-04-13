@@ -42,6 +42,20 @@ Deno.serve(async (req: Request) => {
       );
     }
 
+    // Verify submission exists before updating (prevents blind ID guessing)
+    const { data: existing } = await supabase
+      .from("contact_submissions")
+      .select("id")
+      .eq("id", submission_id)
+      .maybeSingle();
+
+    if (!existing) {
+      return new Response(
+        JSON.stringify({ ok: false, error: "submission not found" }),
+        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
     const updateData: Record<string, unknown> = {};
 
     if (conversation_id) updateData.agent_conversation_id = conversation_id;
