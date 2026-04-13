@@ -2,10 +2,10 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/Logo_icon.webp" />
+    <link rel="icon" type="image/png" href="/logos/uc-logo-full.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Remote Job finden bei United Closing: Arbeite von überall, flexible Arbeitszeiten, ortsunabhängiges Arbeiten. Starte deine Remote-Karriere jetzt – mit klarem Einstiegspfad und echten Verdienstmöglichkeiten." />
-    <meta name="keywords" content="remote job, closer werden, remote closer, vertriebspartner werden, remote arbeiten, remote jobs deutschland, home office job, ortsunabhängig arbeiten, online geld verdienen, closer job, closer ausbildung, remote sales job" />
+    <meta name="keywords" content="remote job, remote arbeiten, remote jobs deutschland, home office job, ortsunabhängig arbeiten, digitale nomaden, flexible arbeitszeiten, remote work, online geld verdienen, nebenjob remote" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="author" content="United Closing" />
     <meta name="language" content="de" />
@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://united-closing.com/" />
     <meta property="og:title" content="Remote Job finden | Ortsunabhängig arbeiten | United Closing" />
     <meta property="og:description" content="Remote Job finden bei United Closing: Arbeite von überall, flexible Arbeitszeiten, ortsunabhängiges Arbeiten. Starte deine Remote-Karriere jetzt." />
-    <meta property="og:image" content="https://united-closing.com/Logo_final_Oben.webp" />
+    <meta property="og:image" content="https://united-closing.com/logos/uc-logo-full.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="United Closing – Remote Jobs Deutschland" />
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Remote Job finden | United Closing" />
     <meta name="twitter:description" content="Remote Job finden bei United Closing: Arbeite von überall, flexible Arbeitszeiten, ortsunabhängiges Arbeiten." />
-    <meta name="twitter:image" content="https://united-closing.com/Logo_final_Oben.webp" />
+    <meta name="twitter:image" content="https://united-closing.com/logos/uc-logo-full.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -41,7 +41,7 @@
       "logo": "https://united-closing.com/Logo_final_Oben.png",
       "description": "Remote Job finden bei United Closing: Arbeite von überall, flexible Arbeitszeiten, ortsunabhängiges Arbeiten.",
       "sameAs": [
-        "https://www.instagram.com/united.closing"
+        "https://www.instagram.com/united_closing"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -99,15 +99,6 @@
     }
     </script>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -123,17 +114,7 @@
     </script>
     <!-- End Meta Pixel Code -->
 
-    <!-- Hide ElevenLabs Chat on Mobile -->
-    <style>
-      elevenlabs-convai {
-        display: none;
-      }
-      @media (min-width: 1024px) {
-        elevenlabs-convai {
-          display: block;
-        }
-      }
-    </style>
+    <!-- ElevenLabs Widget wird nur auf /video geladen (siehe VideoPage.tsx) -->
   </head>
   <body>
     <noscript><img height="1" width="1" style="display:none"
@@ -142,8 +123,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- ElevenLabs Conversational AI Widget -->
-    <elevenlabs-convai agent-id="agent_5501khbe53nsfgvbnc029xkzjrzh"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <!-- ElevenLabs Widget nur auf /video (dynamisch geladen in VideoPage.tsx) -->
   </body>
 </html>

@@ -596,21 +596,18 @@ export default function RemoteJobsLandingpageUltraModern() {
 
       trackFormSubmitSuccess("erstgespraech_anfrage");
 
-      // GA4 conversion event
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "generate_lead", { event_category: "form", event_label: "contact_form" });
+      // Lead-ID + Name in localStorage fuer VideoPage
+      const responseData = await response.json();
+      if (responseData.submissionId) {
+        localStorage.setItem("uc_submission_id", responseData.submissionId);
       }
+      localStorage.setItem("uc_lead_name", form.name.split(" ")[0]);
 
-      // Facebook Pixel
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        (window as any).fbq("track", "Lead");
-      }
-
-      // Store lead name and redirect to video page
-      localStorage.setItem("uc_lead_name", form.name || "");
       setModalOpen(false);
       setForm({ name: "", email: "", phone: "" });
-      window.location.href = "/video";
+
+      // Redirect zu Video-Seite statt nur Toast
+      navigate("/video");
     } catch (error) {
       console.error("Error submitting form:", error);
       setToast({
@@ -675,6 +672,12 @@ export default function RemoteJobsLandingpageUltraModern() {
             >
               <Instagram className="h-5 w-5" />
             </a>
+            <a
+              href="/admin"
+              className="ml-1 rounded-xl px-3 py-2 text-sm text-white/60 hover:bg-white/5 hover:text-white transition-colors"
+            >
+              Login
+            </a>
           </nav>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -731,6 +734,13 @@ export default function RemoteJobsLandingpageUltraModern() {
                   <Instagram className="h-4 w-4" />
                   <span>Instagram</span>
                 </a>
+                <a
+                  href="/admin"
+                  onClick={() => setMobileMenu(false)}
+                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-white/60 hover:bg-white/10"
+                >
+                  Login
+                </a>
               </div>
             </div>
           </div>
@@ -744,7 +754,6 @@ export default function RemoteJobsLandingpageUltraModern() {
           logo="/United_closing.webp"
           ctaButtons={[
             { text: "Jetzt kostenloses Erstgespräch sichern", primary: true, onClick: openCTA, trackingLocation: "hero" },
-            { text: "Finde heraus ob es passt \u2192", href: "/quiz" },
           ]}
           microDetails={[
             "Ortsunabhängig arbeiten – von überall",
@@ -1047,7 +1056,7 @@ export default function RemoteJobsLandingpageUltraModern() {
           </div>
         </section>
 
-        {/* <InstagramFeed /> */}
+        {/* <InstagramFeed /> — aktivieren sobald Instagram API Token vorhanden */}
 
         <section className="relative mx-auto max-w-7xl px-4 py-16 sm:py-24">
           <div className="absolute inset-0 -z-10 overflow-hidden">
