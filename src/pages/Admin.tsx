@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
 interface ContactSubmission {
   id: string;
@@ -26,6 +26,7 @@ export default function Admin() {
   }, []);
 
   async function loadSubmissions() {
+    if (!supabase) { setError('Supabase nicht konfiguriert'); setLoading(false); return; }
     try {
       const { data, error } = await supabase
         .from('contact_submissions')
@@ -42,6 +43,7 @@ export default function Admin() {
   }
 
   async function updateStatus(id: string, status: string) {
+    if (!supabase) return;
     try {
       const { error } = await supabase
         .from('contact_submissions')
