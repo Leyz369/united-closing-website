@@ -18,7 +18,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const replicateApiKey = "re_hoZDwZZN_Lyi4VJR5NqHz2KECuSCRBYwX";
+    const replicateApiKey = Deno.env.get("REPLICATE_API_KEY") || "";
 
     const requestData: ImageGenerationRequest = await req.json();
     const { prompt, aspectRatio = "16:9" } = requestData;
