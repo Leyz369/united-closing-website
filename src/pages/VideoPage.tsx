@@ -176,7 +176,7 @@ export default function VideoPage() {
 
           {/* CTA */}
           <a
-            href="https://cal.com/united-closing/erstgespraech"
+            href="https://cal.com/jan-freude/remote-karriere-check-mit-united-closing"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#7AA2FF] to-[#A78BFA] px-8 py-5 text-lg font-bold text-white shadow-xl shadow-[#7AA2FF]/20 transition-all duration-300 hover:shadow-[#7AA2FF]/40 hover:brightness-110 sm:text-xl"

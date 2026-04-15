@@ -2,7 +2,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 import { Resend } from 'npm:resend@3.2.0';
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": Deno.env.get("SITE_URL") || "https://united-closing.com",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
@@ -33,21 +33,32 @@ Deno.serve(async (req: Request) => {
     }
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
-    const formData: ContactFormData = await req.json();
+    const rawData: ContactFormData = await req.json();
+
+    // Sanitize input to prevent HTML injection in email templates
+    const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const formData: ContactFormData = {
+      name: esc(rawData.name || ''),
+      email: esc(rawData.email || ''),
+      phone: esc(rawData.phone || ''),
+      availability: esc(rawData.availability || 'Nebenberuflich'),
+      goals: esc(rawData.goals || ''),
+    };
+
+    // Save RAW (unsanitized) data to database — HTML escaping is only for emails
+    const dbData = {
+      name: rawData.name,
+      email: rawData.email,
+      phone: rawData.phone || '',
+      availability: rawData.availability || 'Nebenberuflich',
+      goals: rawData.goals || '',
+      status: 'new',
+    };
 
     // Save to database (always)
     const { data, error } = await supabase
       .from('contact_submissions')
-      .insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || '',
-          availability: formData.availability,
-          goals: formData.goals || '',
-          status: 'new'
-        }
-      ])
+      .insert([dbData])
       .select()
       .single();
 

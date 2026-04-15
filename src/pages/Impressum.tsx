@@ -20,7 +20,7 @@ export default function Impressum() {
             className="flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5"
             aria-label="Zur Startseite"
           >
-            <img src="/united_closing-logo.webp" alt="RemoteStart Logo" className="h-12 w-auto" />
+            <img src="/united_closing-logo.webp" alt="United Closing Logo" className="h-12 w-auto" />
           </button>
           <button
             onClick={() => navigate("/")}
@@ -174,7 +174,7 @@ export default function Impressum() {
         <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <img src="/united_closing-logo.webp" alt="RemoteStart Logo" className="h-14 w-auto" />
+              <img src="/united_closing-logo.webp" alt="United Closing Logo" className="h-14 w-auto" />
             </div>
 
             <div className="flex flex-wrap gap-3 text-xs text-white/60">

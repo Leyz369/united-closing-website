@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
             className="flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5"
             aria-label="Zur Startseite"
           >
-            <img src="/united_closing-logo.webp" alt="RemoteStart Logo" className="h-12 w-auto" />
+            <img src="/united_closing-logo.webp" alt="United Closing Logo" className="h-12 w-auto" />
           </button>
           <button
             onClick={() => navigate("/")}
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
               Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
             </p>
             <div className="mt-2 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
-              <p className="font-semibold text-white">RemoteStart</p>
+              <p className="font-semibold text-white">United Closing</p>
               <p className="mt-1">[Vollständiger Name oder Firma]</p>
               <p>[Straße und Hausnummer]</p>
               <p>[PLZ und Ort]</p>
@@ -326,7 +326,7 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <img src="/united_closing-logo.webp" alt="RemoteStart Logo" className="h-14 w-auto" />
+              <img src="/united_closing-logo.webp" alt="United Closing Logo" className="h-14 w-auto" />
             </div>
 
             <div className="flex flex-wrap gap-3 text-xs text-white/60">
@@ -340,7 +340,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div className="mt-8 text-xs text-white/45">
-            © {new Date().getFullYear()} RemoteStart
+            © {new Date().getFullYear()} United Closing
           </div>
         </div>
       </footer>

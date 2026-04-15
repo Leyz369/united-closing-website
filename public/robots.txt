@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://unitedclosing.de/sitemap.xml
+Sitemap: https://united-closing.com/sitemap.xml

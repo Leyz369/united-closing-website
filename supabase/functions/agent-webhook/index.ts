@@ -58,13 +58,14 @@ Deno.serve(async (req: Request) => {
 
     const updateData: Record<string, unknown> = {};
 
-    if (conversation_id) updateData.agent_conversation_id = conversation_id;
-    if (summary) updateData.agent_summary = summary;
-    if (experience) updateData.experience = experience;
-    if (hours_per_week) updateData.hours_per_week = hours_per_week;
-    if (income_goal) updateData.income_goal = income_goal;
-    if (start_date) updateData.start_date = start_date;
-    if (motivation) updateData.motivation = motivation;
+    if (conversation_id !== undefined) updateData.agent_conversation_id = conversation_id;
+    if (transcript !== undefined) updateData.agent_summary = [summary, transcript].filter(Boolean).join("\n\n---\n\n") || transcript;
+    if (summary !== undefined && transcript === undefined) updateData.agent_summary = summary;
+    if (experience !== undefined) updateData.experience = experience;
+    if (hours_per_week !== undefined) updateData.hours_per_week = hours_per_week;
+    if (income_goal !== undefined) updateData.income_goal = income_goal;
+    if (start_date !== undefined) updateData.start_date = start_date;
+    if (motivation !== undefined) updateData.motivation = motivation;
     if (video_watched !== undefined) updateData.video_watched = video_watched;
     if (cal_booked !== undefined) updateData.cal_booked = cal_booked;
 
